@@ -1,7 +1,7 @@
 body{
     margin: 0;
     margin-top: -16px;
-    font-family: "Arial";
+    font-family: "Microsoft Jhenghei", "Arial";
 }
 section{
     height: 100vh;
@@ -9,7 +9,8 @@ section{
     color: #ffc408;
     position: relative;
     white-space: nowrap;
-    padding-top: 5%;
+    /*padding-top: 5%;*/
+    padding-top: 2%;
 }
 a{
     color: inherit;
@@ -21,7 +22,7 @@ a{
 }
 .src{
     position: absolute;
-    bottom: 5%;
+    bottom: 5px;
     color: #fff;
     font-size: 0.8em;
     width: 100%;
@@ -149,25 +150,21 @@ a{
 }
 #page-4 img{
     width: 100%;
-    max-height: 80%;
+    max-height: 100%;
     object-fit: contain;
+    position: absolute;
+    left: 0;
+    bottom: 18px;
 }
 #page-5>div{
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 40% 50%;
     grid-template-rows: 50% 50%;
     grid-template-areas: "mix mix-text" "brand brand-text";
     height: 75%;
     width: 80%;
     margin-left: 10%;
     position: relative;
-}
-@media (max-width: 768px){
-    #page-5 > div{
-        grid-template-columns: 100%;
-        grid-template-rows: 25% 25% 25% 25%;
-        grid-template-areas: "mix-text" "mix" "brand-text" "brand";  
-    }
 }
 #page-5 .col11{
     grid-area: mix;
@@ -186,23 +183,87 @@ a{
     z-index: 1;
 }
 #page-5 .col11 img, #page-5 .col21 img{
-    width: 50%;
+    /*width: 30%;*/
+    height: 70;
     object-fit: contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 #page-5 .col12 img, #page-5 .col22 img{
     width: 45%;
     height: 80%;
-    /*object-fit: contain;*/
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    position: absolute;
+}
+#page-5 .col12 div p, #page-5 .col22 div p{
+    margin-left: 20px;
+    background: #e5f1f8;
+    white-space: normal;
+    color: #000;
+    border-radius: 8px;
+    width: 320px;
+    /*max-width: 40%;*/
+    text-align: left;
+    padding: 10px;
+    line-height: 1.5;
+    font-size: 1.15em;
+}
+#page-5 .col12 div p span, #page-5 .col22 div p span{
+    color: #c1272d;
+    font-weight: bold;
+}
+#page-5 .col12 div, #page-5 .col22 div{
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+}
+@media (max-width: 768px){
+    /*#page-5 > div{
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 25% 25% 25%;
+        grid-template-areas: "mix-text" "mix" "brand-text" "brand";  
+    }
+    #page-5 .col11 img, #page-5 .col21 img{
+        left: 0;
+    }
+    #page-5 .col12 div, #page-5 .col22 div{
+        margin-left: calc((100% - 340px)/2);
+        bottom: 0;
+    }
+    #page-5 .col12 div p, #page-5 .col22 div p{
+        right: 0;
+    }
+    #page-5 .col11 img, #page-5 .col21 img{
+        left: 0;
+        right: initial;
+        width: 50%;
+    }*/
+}
+#page-5 .col12 div::after, #page-5 .col22 div::after {
+    border-color: transparent transparent transparent #e5f1f8;
+    border-image: none;
+    border-style: solid;
+    border-width: 26px;
+    top: 13px;
+    content: " ";
+    display: block;
+    right: -1%;
+    position: relative;
+    transform: rotate(20deg);
 }
 #page-5 .col11, #page-5 .col21{
-    position: absolute;
+    position: relative;
     bottom: 0;
     right: 0;
 }
 #page-5 .col12, #page-5 .col22{
-    /*position: absolute;
-    left: 0;
-    bottom: 0;*/
+    position: relative;
+}
+#page-5 .col11 div, #page-5 .col21 div{
+    /*position: absolute;*/
 }
 #page-6 > div{
     display: grid;
@@ -254,6 +315,14 @@ a{
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 80% 20%;
     grid-template-areas: "sand nail hair med" "sand-text nail-text hair-text med-text";
+    color: #000;
+}
+@media (max-width: 768px){
+    #page-8 > div{
+        grid-template-columns: 80%;
+        grid-template-rows: 20% 5% 20% 5% 20% 5% 20% 5%;
+        grid-template-areas: "sand" "sand-text" "nail" "nail-text" "hair" " hair-text" "med" "med-text";
+    }
 }
 #page-8 .col11{
     grid-area: sand;
